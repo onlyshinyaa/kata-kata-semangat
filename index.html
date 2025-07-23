@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata-Kata Semangat untuk Pacar</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f9d423, #ff4e50);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            background: rgba(255,255,255,0.95);
+            padding: 40px 28px 32px 28px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 420px;
+            position: relative;
+        }
+        .heart {
+            position: absolute;
+            top: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: #ff4e50;
+            animation: pulse 1.2s infinite;
+            filter: drop-shadow(0 2px 8px #ff4e5070);
+        }
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.15); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+        h1 {
+            color: #ff4e50;
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+        #kataSemangat {
+            font-size: 1.25rem;
+            color: #333;
+            margin: 24px 0 18px 0;
+            min-height: 60px;
+            transition: color 0.3s, opacity 0.3s;
+            opacity: 1;
+            font-weight: 500;
+        }
+        #gambarSemangat {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(255,78,80,0.13);
+            margin-bottom: 18px;
+            transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+        #gambarSemangat.animated {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 8px 32px rgba(255,78,80,0.22);
+        }
+        button {
+            background: linear-gradient(90deg, #ff4e50 60%, #f9d423 100%);
+            color: #fff;
+            border: none;
+            padding: 13px 32px;
+            border-radius: 10px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 2px 8px rgba(255,78,80,0.10);
+            margin-top: 6px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #f9d423 60%, #ff4e50 100%);
+            color: #ff4e50;
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 22px 6vw 18px 6vw;
+                max-width: 98vw;
+            }
+            #gambarSemangat {
+                max-width: 95vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Kata-Kata Semangat untuk Pacar</h1>
+        <div id="kataSemangat">Kamu adalah alasan aku selalu semangat setiap hari!</div>
+        <button onclick="tampilkanKata()">Tampilkan Kata Semangat Lain</button>
+    </div>
+    <script>
+        const kataKata = [
+            "Kamu adalah alasan aku selalu semangat setiap hari!",
+            "Jangan pernah menyerah, aku selalu ada untukmu!",
+            "Semangat ya sayang, apapun yang terjadi aku percaya kamu bisa!",
+            "Hari ini mungkin berat, tapi aku yakin kamu lebih kuat!",
+            "Aku bangga punya pacar sekuat dan sehebat kamu!",
+            "Jangan lupa tersenyum, karena senyummu adalah semangatku!",
+            "Setiap langkahmu, aku akan selalu mendukungmu!",
+            "Kamu luar biasa, jangan pernah ragukan dirimu sendiri!",
+            "Apapun yang kamu hadapi, ingat aku selalu di sisimu!",
+            "Semangat terus ya cinta, masa depan indah menanti kita!"
+        ];
+
+        function tampilkanKata() {
+            let index = Math.floor(Math.random() * kataKata.length);
+            const kataElem = document.getElementById('kataSemangat');
+            kataElem.style.opacity = 0;
+            setTimeout(() => {
+                kataElem.textContent = kataKata[index];
+                kataElem.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</body>
+</html> 
